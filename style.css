@@ -1,0 +1,368 @@
+/*
+========================================
+CSS: ESTILO TECNOLÓGICO COM CORES FORTES
+========================================
+*/
+
+/* Variáveis de Cores (Paleta CyberTech) */
+:root {
+    --bg-color: #0A0A0A;         /* Fundo Quase Preto */
+    --primary-color: #00FF99;    /* Verde Neon/Ciber */
+    --secondary-color: #00CCFF;  /* Azul Elétrico */
+    --text-color: #FFFFFF;       /* Texto Branco Puro */
+    --accent-color: #FF00FF;     /* Magenta/Cyberpunk Pink para detalhes */
+    
+    /* Cores para Status de Estratégia */
+    --status-green: #00CC00; 
+    --status-yellow: #CCCC00;
+    --status-red: #CC0000;
+}
+
+/* Base e Tipografia */
+body {
+    /* MUDANÇA: Fonte 'Roboto' padrão para melhor legibilidade */
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-image: radial-gradient(#1a1a1a 1px, transparent 0);
+    background-size: 40px 40px;
+}
+
+/* Garante que títulos e destaques mantenham a fonte 'tech' */
+h1, h2, h3, h4, h5, h6,
+.tech-block strong, 
+nav ul li a,
+.positional-block strong {
+    font-family: 'Roboto Mono', monospace;
+}
+
+
+/* Estilo do Container Principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Cabeçalho e Navegação */
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-bottom: 2px solid var(--primary-color);
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 0 20px var(--primary-color);
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 0 0 10px var(--primary-color);
+    
+    /* Animação de Digitação */
+    overflow: hidden; /* Esconde o texto que "ainda não foi digitado" */
+    white-space: nowrap; /* Mantém o texto em uma linha */
+    border-right: .15em solid var(--primary-color); /* O cursor piscando */
+    width: 33ch; /* Ajuste o número de caracteres (33) */
+    margin: 0 auto; /* Centraliza a animação */
+    animation: 
+        typing 3.5s steps(33, end),
+        blink-caret .75s step-end infinite;
+}
+
+/* Keyframes para a animação de digitação */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 33ch }
+}
+
+/* Keyframes para o cursor piscando */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--primary-color) }
+}
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+nav ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px 8px;
+    border: 1px solid var(--secondary-color);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+nav ul li a:hover {
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 10px var(--secondary-color);
+}
+
+/* Seções de Conteúdo */
+section {
+    padding: 40px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+section h2 {
+    color: var(--accent-color);
+    border-left: 5px solid var(--accent-color);
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 5px var(--accent-color);
+}
+
+/* Estilo de Cartões de Conteúdo (Tech Blocks) */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.tech-block {
+    background-color: rgba(10, 10, 10, 0.7);
+    padding: 20px;
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 15px rgba(0, 255, 153, 0.5); 
+    transition: transform 0.2s;
+}
+
+.tech-block:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 20px var(--secondary-color);
+}
+
+.tech-block h3 {
+    color: var(--secondary-color);
+    border-bottom: 1px dashed var(--secondary-color);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* Estilo de Posições */
+.position-group-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.position-group {
+    background-color: rgba(15, 15, 15, 0.8);
+    border: 2px solid var(--secondary-color);
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 204, 255, 0.5);
+}
+
+.position-group h4 {
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    border-bottom: 1px dashed var(--accent-color);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.positional-block {
+    padding: 5px 0;
+    margin-bottom: 10px;
+}
+
+.positional-block strong {
+    color: var(--primary-color);
+    font-size: 1.1em;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 2px;
+    border-bottom: 1px dotted var(--primary-color);
+}
+
+/* Imagem do Diagrama */
+#posicoes img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 25px auto;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 0 30px var(--accent-color);
+}
+/* Fim Estilo de Posições */
+
+
+/* Tabela de Classificação das Mãos */
+.hand-ranking-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.hand-ranking-table th, .hand-ranking-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hand-ranking-table th {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hand-ranking-table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.hand-ranking-table tr:first-of-type {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    font-weight: bold;
+}
+
+/* Lista de Ações */
+.actions-list li {
+    margin-bottom: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 20px;
+}
+
+.actions-list li::before {
+    content: '>';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Estrutura da Estratégia */
+.strategy-grid {
+    display: grid;
+    /* Nota: o minmax(350px) original será um problema em celulares */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.strategy-block {
+    padding: 25px;
+    background-color: rgba(15, 15, 15, 0.8);
+    border: 2px solid var(--text-color);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Estilos específicos baseados na força da mão */
+.strategy-block.early-position { border-color: var(--status-red); box-shadow: 0 0 20px var(--status-red); }
+.strategy-block.late-position { border-color: var(--status-green); box-shadow: 0 0 15px var(--status-green); }
+.strategy-block.post-flop { border-color: var(--status-yellow); box-shadow: 0 0 10px var(--status-yellow); }
+
+.strategy-block h3 {
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.strategy-list { list-style-type: none; padding: 0; margin-top: 15px; }
+
+.strategy-list li { padding-left: 15px; position: relative; margin-bottom: 8px; }
+
+.strategy-list li::before { content: '//'; color: var(--secondary-color); position: absolute; left: 0; font-weight: bold; }
+
+.note {
+    margin-top: 20px;
+    padding: 10px;
+    border-left: 5px solid var(--primary-color);
+    background-color: rgba(0, 255, 153, 0.05);
+    font-size: 0.9em;
+}
+
+.strategy-block:hover { transform: scale(1.01); opacity: 0.95; }
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    border-top: 2px solid var(--accent-color);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--text-color);
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgba(255, 0, 255, 0.5);
+}
+
+
+/* ========================================
+   NOVO: REGRAS PARA MOBILE (RESPONSIVO)
+   ======================================== */
+@media (max-width: 600px) {
+
+    /* 1. Ajusta o Título Principal */
+    header h1 {
+        font-size: 1.6em; /* Diminui a fonte */
+        letter-spacing: 2px; /* Diminui o espaçamento */
+        
+        /* Desativa a animação de digitação */
+        animation: none; 
+        white-space: normal; /* Permite que o texto quebre a linha */
+        border-right: none;  /* Remove o cursor */
+        width: auto;         /* Deixa a largura ser automática */
+    }
+
+    /* 2. Empilha os links da navegação */
+    nav ul {
+        flex-direction: column;
+        gap: 10px; /* Adiciona espaço entre os links */
+    }
+
+    /* 3. Força todas as grades para 1 coluna */
+    .content-grid, 
+    .position-group-grid,
+    .strategy-grid {
+        /* Força 1 coluna para melhor leitura */
+        grid-template-columns: 1fr;
+    }
+
+    /* 4. Reduz paddings gerais */
+    .container {
+        padding: 15px;
+    }
+
+    .strategy-block {
+        padding: 20px;
+    }
+
+    section {
+        padding: 20px 0;
+    }
+
+    /* 5. Ajusta tabela para telas pequenas */
+    .hand-ranking-table {
+        font-size: 0.8em; /* Diminui fonte da tabela */
+    }
+    .hand-ranking-table th, .hand-ranking-table td {
+        padding: 8px; /* Diminui padding das células */
+    }
+}
