@@ -7,14 +7,13 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
     <header>
-        <div class="container">
+        <div class="header-content container">
             <h1>PokerTech: Dominando o Texas Hold'em</h1> 
             <nav>
                 <ul>
@@ -31,54 +30,56 @@
 
     <main class="container">
         
-        <section id="regras">
+        <section id="regras" class="poker-section">
             <h2>Protocolo de Jogo</h2>
             <div class="content-grid">
-                <div class="tech-block">
+                <div class="tech-block card-effect">
                     <h3>O Objetivo</h3>
                     <p>O objetivo é formar a <strong>melhor mão de 5 cartas</strong>, combinando suas 2 cartas privadas (hole cards) com as 5 cartas comunitárias (board) da mesa.</p>
                 </div>
-                <div class="tech-block">
+                <div class="tech-block card-effect">
                     <h3>O Baralho</h3>
                     <p>Utiliza-se um baralho padrão de 52 cartas. O dealer distribui 2 cartas fechadas para cada jogador.</p>
                 </div>
-                <div class="tech-block">
+                <div class="tech-block card-effect">
                     <h3>Blinds (Apostas Obrigatórias)</h3>
                     <p>Antes de receber as cartas, os dois jogadores à esquerda do dealer (Button) colocam as apostas obrigatórias: o Small Blind (SB) e o Big Blind (BB).</p>
                 </div>
             </div>
         </section>
 
-        <section id="rodadas">
+        <section id="rodadas" class="poker-section">
             <h2>Processamento das Rodadas</h2>
             <div class="content-grid">
-                <div class="tech-block">
+                <div class="poker-info-block chip-effect">
                     <h3>1. Pré-Flop</h3>
                     <p>Os jogadores agem com base nas suas 2 cartas privadas, começando pelo jogador à esquerda do Big Blind.</p>
                 </div>
-                <div class="tech-block">
+                <div class="poker-info-block chip-effect">
                     <h3>2. Flop</h3>
                     <p>Três cartas comunitárias são abertas na mesa. Começa a segunda rodada de apostas.</p>
                 </div>
-                <div class="tech-block">
+                <div class="poker-info-block chip-effect">
                     <h3>3. Turn</h3>
                     <p>Uma quarta carta comunitária é aberta. Ocorre a terceira rodada de apostas.</p>
                 </div>
-                <div class="tech-block">
-                    <h3>4. River</h3>
-                    <p>A quinta e última carta comunitária é aberta. É a rodada final de apostas (Showdown).</p>
+                <div class="poker-info-block chip-effect">
+                    <h3>4. River & Showdown</h3>
+                    <p>A quinta e última carta comunitária é aberta. É a rodada final de apostas, seguida pelo <strong>Showdown</strong> (revelação das cartas, se necessário).</p>
                 </div>
             </div>
         </section>
 
-        <section id="posicoes">
-            <h2>Mapeamento de Posições (Vantagem Tática)</h2>
-            <p>O chip do Button (Dealer) indica a melhor posição. A posição afeta drasticamente a força das mãos que você deve jogar.</p>
+        <section id="posicoes" class="poker-section">
+            <div class="section-header-posicoes">
+                <h2>Mapeamento de Posições (Vantagem Tática)</h2>
+                <p>O chip do Button (Dealer) indica a melhor posição. A posição afeta drasticamente a força das mãos que você deve jogar.</p>
+            </div>
             
-            <img src="Artigo-900x450-MEIO-14.webp" alt="Diagrama de uma mesa de poker com 9 posições rotuladas: Button (BT), Small Blind (SB), Big Blind (BB), Under The Gun (UTG), UTG+1, Middle Position (MP), Hijack (HJ), Cut-Off (CO)." />
+            <img src="Artigo-900x450-MEIO-14.webp" alt="Diagrama de uma mesa de poker com 9 posições rotuladas: Button (BT), Small Blind (SB), Big Blind (BB), Under The Gun (UTG), UTG+1, Middle Position (MP), Hijack (HJ), Cut-Off (CO)." class="glow-image" />
 
             <div class="position-group-grid">
-                <div class="position-group">
+                <div class="position-group chip-effect red-glow">
                     <h4>🔴 Early Position (Posições Iniciais)</h4>
                     <div class="positional-block">
                         <strong>Small Blind (SB) e Big Blind (BB)</strong>
@@ -90,7 +91,7 @@
                     </div>
                 </div>
 
-                <div class="position-group">
+                <div class="position-group chip-effect yellow-glow">
                     <h4>🟡 Middle Position (Posições Médias)</h4>
                     <div class="positional-block">
                         <strong>Middle Position (MP)</strong>
@@ -102,7 +103,7 @@
                     </div>
                 </div>
 
-                <div class="position-group">
+                <div class="position-group chip-effect green-glow">
                     <h4>🟢 Late Position (Posições Finais)</h4>
                     <div class="positional-block">
                         <strong>Cut-Off (CO)</strong>
@@ -115,24 +116,25 @@
                 </div>
             </div>
         </section>
-        <section id="acoes">
+
+        <section id="acoes" class="poker-section">
             <h2>Comandos de Ação</h2>
-            <ul class="actions-list">
-                <li><strong>FOLD (Desistir):</strong> Abandonar a mão e desistir do pote atual.</li>
-                <li><strong>CHECK (Passar):</strong> Passar a vez de apostar, mantendo as cartas, se não houver apostas na rodada.</li>
-                <li><strong>CALL (Pagar):</strong> Igualar a aposta mais alta feita na rodada para continuar no jogo.</li>
-                <li><strong>RAISE (Aumentar):</strong> Aumentar o valor da aposta atual.</li>
-                <li><strong>ALL-IN (Tudo):</strong> Apostar todas as fichas disponíveis.</li>
+            <ul class="actions-list content-grid">
+                <li class="poker-info-block action-chip"><strong>FOLD (Desistir):</strong> Abandonar a mão e desistir do pote atual.</li>
+                <li class="poker-info-block action-chip"><strong>CHECK (Passar):</strong> Passar a vez de apostar, mantendo as cartas, se não houver apostas na rodada.</li>
+                <li class="poker-info-block action-chip"><strong>CALL (Pagar):</strong> Igualar a aposta mais alta feita na rodada para continuar no jogo.</li>
+                <li class="poker-info-block action-chip"><strong>RAISE (Aumentar):</strong> Aumentar o valor da aposta atual.</li>
+                <li class="poker-info-block action-chip"><strong>ALL-IN (Tudo):</strong> Apostar todas as fichas disponíveis.</li>
             </ul>
         </section>
 
-        <section id="estrategia">
+        <section id="estrategia" class="poker-section">
             <h2>Decisão Tática de Ação</h2>
             <p>Os comandos de ação (Fold, Call, Raise, All-in, Check) dependem da força das suas 2 cartas privadas (Hole Cards) e da sua posição na mesa.</p>
 
             <div class="strategy-grid">
                 
-                <div class="strategy-block early-position">
+                <div class="strategy-block early-position card-effect red-glow">
                     <h3>🔴 PRÉ-FLOP: POSIÇÕES INICIAIS (UTG, UTG+1)</h3>
                     <p>Sua faixa de mãos deve ser EXTREMAMENTE TIGHT, já que muitos jogadores agem depois de você.</p>
                     <ul class="strategy-list">
@@ -143,7 +145,7 @@
                     <p class="note">Ação Recomendada: Inicie com um RAISE de 3x a 4x o Big Blind apenas com as MELHORES MÃOS. Qualquer CALL de Raise deve ser feito com CAUTELA.</p>
                 </div>
 
-                <div class="strategy-block late-position">
+                <div class="strategy-block late-position card-effect green-glow">
                     <h3>🟢 PRÉ-FLOP: POSIÇÕES FINAIS (CO, BTN)</h3>
                     <p>Maior VANTAGEM POSICIONAL. Você pode expandir DRAMATICAMENTE sua faixa de mãos.</p>
                     <ul class="strategy-list">
@@ -154,7 +156,7 @@
                     <p class="note">Ação Recomendada: RAISE com mais de 50% das mãos no Button. O FOLD é RARO, exceto contra grandes Raises anteriores.</p>
                 </div>
 
-                <div class="strategy-block post-flop">
+                <div class="strategy-block post-flop card-effect yellow-glow">
                     <h3>🟡 PÓS-FLOP: AVALIAÇÃO TÉCNICA</h3>
                     <p>Após o Flop (3 cartas), o foco é a AVALIAÇÃO de risco e recompensa.</p>
                     <ul class="strategy-list">
@@ -169,82 +171,84 @@
             </div>
         </section>
 
-        <section id="maos">
+        <section id="maos" class="poker-section">
             <h2>Classificação Hierárquica das Mãos (Sistema de Pontuação)</h2>
             <p>A tabela abaixo lista as combinações de 5 cartas em ordem decrescente de força, da mais forte para a mais fraca.</p>
 
-            <table class="hand-ranking-table">
-                <thead>
-                    <tr>
-                        <th>Ranking</th>
-                        <th>Nome da Mão</th>
-                        <th>Descrição</th>
-                        <th>Exemplo</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1º</td>
-                        <td><strong>ROYAL FLUSH</strong></td>
-                        <td>Sequência de 10 a Ás, todas do mesmo naipe.</td>
-                        <td>A, K, Q, J, 10 de espadas</td>
-                    </tr>
-                    <tr>
-                        <td>2º</td>
-                        <td>STRAIGHT FLUSH</td>
-                        <td>Cinco cartas em sequência, todas do mesmo naipe.</td>
-                        <td>9, 8, 7, 6, 5 de copas</td>
-                    </tr>
-                    <tr>
-                        <td>3º</td>
-                        <td>QUADRA (Four of a Kind)</td>
-                        <td>Quatro cartas do mesmo valor.</td>
-                        <td>K, K, K, K, 7</td>
-                    </tr>
-                    <tr>
-                        <td>4º</td>
-                        <td>FULL HOUSE</td>
-                        <td>Uma trinca e um par.</td>
-                        <td>A, A, A, 5, 5</td>
-                    </tr>
-                    <tr>
-                        <td>5º</td>
-                        <td>FLUSH (Cor)</td>
-                        <td>Cinco cartas do mesmo naipe, não em sequência.</td>
-                        <td>A, 10, 7, 5, 2 de ouros</td>
-                    </tr>
-                    <tr>
-                        <td>6º</td>
-                        <td>SEQUÊNCIA (Straight)</td>
-                        <td>Cinco cartas em sequência numérica, de naipes diferentes.</td>
-                        <td>6, 5, 4, 3, 2 (naipes variados)</td>
-                    </tr>
-                    <tr>
-                        <td>7º</td>
-                        <td>TRINCA (Three of a Kind)</td>
-                        <td>Três cartas do mesmo valor.</td>
-                        <td>J, J, J, 9, 2</td>
-                    </tr>
-                    <tr>
-                        <td>8º</td>
-                        <td>DOIS PARES</td>
-                        <td>Dois pares de cartas de valores diferentes.</td>
-                        <td>A, A, 8, 8, Q</td>
-                    </tr>
-                    <tr>
-                        <td>9º</td>
-                        <td>PAR (One Pair)</td>
-                        <td>Apenas um par de cartas do mesmo valor.</td>
-                        <td>Q, Q, 10, 5, 3</td>
-                    </tr>
-                    <tr>
-                        <td>10º</td>
-                        <td>CARTA ALTA (High Card)</td>
-                        <td>Quando nenhuma das combinações acima é formada, vale a carta de maior valor.</td>
-                        <td>A, K, 7, 4, 2</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-scroll-wrapper">
+                <table class="hand-ranking-table">
+                    <thead>
+                        <tr>
+                            <th>Ranking</th>
+                            <th>Nome da Mão</th>
+                            <th>Descrição</th>
+                            <th>Exemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1º</td>
+                            <td><strong>ROYAL FLUSH</strong></td>
+                            <td>Sequência de 10 a Ás, todas do mesmo naipe.</td>
+                            <td>A, K, Q, J, 10 de espadas</td>
+                        </tr>
+                        <tr>
+                            <td>2º</td>
+                            <td>STRAIGHT FLUSH</td>
+                            <td>Cinco cartas em sequência, todas do mesmo naipe.</td>
+                            <td>9, 8, 7, 6, 5 de copas</td>
+                        </tr>
+                        <tr>
+                            <td>3º</td>
+                            <td>QUADRA (Four of a Kind)</td>
+                            <td>Quatro cartas do mesmo valor.</td>
+                            <td>K, K, K, K, 7</td>
+                        </tr>
+                        <tr>
+                            <td>4º</td>
+                            <td>FULL HOUSE</td>
+                            <td>Uma trinca e um par.</td>
+                            <td>A, A, A, 5, 5</td>
+                        </tr>
+                        <tr>
+                            <td>5º</td>
+                            <td>FLUSH (Cor)</td>
+                            <td>Cinco cartas do mesmo naipe, não em sequência.</td>
+                            <td>A, 10, 7, 5, 2 de ouros</td>
+                        </tr>
+                        <tr>
+                            <td>6º</td>
+                            <td>SEQUÊNCIA (Straight)</td>
+                            <td>Cinco cartas em sequência numérica, de naipes diferentes.</td>
+                            <td>6, 5, 4, 3, 2 (naipes variados)</td>
+                        </tr>
+                        <tr>
+                            <td>7º</td>
+                            <td>TRINCA (Three of a Kind)</td>
+                            <td>Três cartas do mesmo valor.</td>
+                            <td>J, J, J, 9, 2</td>
+                        </tr>
+                        <tr>
+                            <td>8º</td>
+                            <td>DOIS PARES</td>
+                            <td>Dois pares de cartas de valores diferentes.</td>
+                            <td>A, A, 8, 8, Q</td>
+                        </tr>
+                        <tr>
+                            <td>9º</td>
+                            <td>PAR (One Pair)</td>
+                            <td>Apenas um par de cartas do mesmo valor.</td>
+                            <td>Q, Q, 10, 5, 3</td>
+                        </tr>
+                        <tr>
+                            <td>10º</td>
+                            <td>CARTA ALTA (High Card)</td>
+                            <td>Quando nenhuma das combinações acima é formada, vale a carta de maior valor.</td>
+                            <td>A, K, 7, 4, 2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
     </main>
