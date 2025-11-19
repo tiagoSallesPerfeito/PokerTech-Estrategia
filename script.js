@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     behavior: 'smooth',
                     block: 'start' // Alinha ao topo da seção
                 });
+
+                // MELHORIA: Remove o #id da URL para manter a barra de endereços limpa
+                history.pushState(null, '', targetId);
             }
         });
     });
