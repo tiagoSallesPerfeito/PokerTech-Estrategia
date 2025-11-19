@@ -45,8 +45,7 @@ body {
 h1, h2, h3, h4, h5, h6,
 nav ul li a,
 .tech-block strong,
-.positional-block strong,
-.hand-ranking-table th {
+.positional-block strong {
     font-family: 'Orbitron', sans-serif; /* Nova fonte para títulos */
     letter-spacing: 1px;
 }
@@ -355,45 +354,25 @@ section p {
 }
 
 
-/* Tabela de Classificação das Mãos */
-.hand-ranking-table {
+/*
+========================================
+ESTILO PARA A IMAGEM DE RANKING DE MÃOS (NOVA)
+========================================
+*/
+.ranking-image-container {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    font-size: 0.9em;
-    background-color: rgba(20, 15, 10, 0.9); /* Fundo marrom escuro */
-    border: 2px solid var(--primary-color); /* Borda bege */
+    max-width: 800px; /* Limite o tamanho máximo para não esticar demais */
+    margin: 25px auto;
+    border: 3px solid var(--primary-color); /* Borda bege da paleta */
     box-shadow: 0 0 20px rgba(212, 167, 103, 0.5); /* Glow bege */
-    border-radius: 8px; /* Cantos arredondados */
+    border-radius: 8px;
+    overflow: hidden; /* Garante que a imagem se ajuste ao container */
 }
 
-.hand-ranking-table th, .hand-ranking-table td {
-    padding: 12px;
-    text-align: left;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--text-color); /* Texto claro */
-}
-
-.hand-ranking-table th {
-    background-color: var(--secondary-color); /* Vermelho */
-    color: var(--text-color); /* Texto claro */
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-shadow: 0 0 5px rgba(255,255,255,0.5);
-}
-
-.hand-ranking-table tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.03); /* Linhas pares mais escuras */
-}
-
-.hand-ranking-table tr:first-of-type { /* Royal Flush */
-    background-color: var(--primary-color); /* Bege/Creme */
-    color: var(--bg-color); /* Texto marrom */
-    font-weight: bold;
-    text-shadow: none;
-}
-.hand-ranking-table tr:first-of-type strong {
-    color: var(--bg-color);
+#hand-ranking-image {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 
@@ -535,26 +514,17 @@ footer {
         padding-bottom: 8px;
     }
 
-    /* 5. Ajusta imagem */
+    /* 5. Ajusta imagem de Posições */
     #posicoes img {
         margin: 15px auto;
         box-shadow: 0 0 20px rgba(166, 33, 33, 0.6); /* Glow vermelho ajustado */
     }
     
-    /* 6. Wrapper para Rolagem da Tabela (Melhoria de usabilidade) */
-    .table-scroll-wrapper {
-        overflow-x: auto; /* Permite a rolagem horizontal */
-        width: 100%;
-        margin-top: 15px;
-        padding-bottom: 8px; /* Para visualizar a barra de rolagem */
-    }
-    /* A tabela dentro do wrapper pode manter sua largura mínima */
-    .hand-ranking-table {
-        min-width: 500px; /* Garante que a tabela não encolha demais e force a rolagem */
-        font-size: 0.8em; /* Diminui fonte da tabela */
-    }
-    .hand-ranking-table th, .hand-ranking-table td {
-        padding: 10px; /* Diminui padding das células */
+    /* 6. Ajuste da nova imagem de Mãos em Mobile */
+    .ranking-image-container {
+        border: 2px solid var(--primary-color);
+        margin: 15px auto;
+        box-shadow: 0 0 10px rgba(212, 167, 103, 0.4);
     }
     
     .poker-info-block { /* Fichas de rodada e ação */
