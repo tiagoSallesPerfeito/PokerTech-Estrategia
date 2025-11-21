@@ -39,7 +39,15 @@ body {
         url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMDY2MzMiIGZpbGwtb3BhY2l0eT0iMC4xMSI+PHBhdGggZD0iTTQwIDMwLjk5NkwzMC45OTYgNDBINzkuMjgyNzkzNyIgLz48cGF0aCBkPSJNMTAgMjBhMjAgMjAgMCAxIDAgMjAgMjBoLTIwWiIgLz48L2c+PC9nPjwvc3ZnPg=='); /* Padrão de feltro (SVG Data URI) */
     background-size: cover, cover, 40px 40px; /* Ajusta o tamanho do feltro */
     background-blend-mode: overlay, normal, normal; /* Mescla os backgrounds */
+    /* NOVO: Cursor temático para o corpo */
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23D4A767" d="M12 2L4 22h16z"/><circle cx="12" cy="12" r="1" fill="%233C2E29"/></svg>') 12 12, pointer;
 }
+
+/* NOVO: Cursor de clique temático para elementos interativos */
+a, button, .poker-info-block, .tech-block, .strategy-block {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><path fill="%23A62121" d="M15 0L0 15h30z"/><path fill="%23D4A767" d="M15 2L5 25h20z"/></svg>') 15 15, pointer;
+}
+
 
 /* Garante que títulos e destaques mantenham a fonte 'tech' */
 h1, h2, h3, h4, h5, h6,
@@ -137,6 +145,17 @@ nav ul li a:hover {
     padding: 50px 0;
     margin-bottom: 30px;
     border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+
+    /* NOVO: Estilo inicial para o efeito de revelação ao rolar */
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* NOVO: Estilo final para o efeito de revelação (adicionado pelo JS) */
+.poker-section.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
 section h2 {
